@@ -8,7 +8,8 @@
 class automato {
     public:
         std::string classe_nome;
-        std::string nome;
+        std::string nome_automato;
+        std::string nome_humano;
         int vitorias;
         int derrotas;
 
@@ -30,6 +31,7 @@ class automato {
 };
 
 void impressoes_iniciais();
+void impressoes_historia();
 
 int gerar_num_aleatorio(int min, int max);
 

@@ -6,13 +6,15 @@
 //Arquivo montagem.cpp
 
 void montar_automato_player(automato &automato_function) {
-    automato_function.nome = obter_nome();
+    automato_function.nome_humano = obter_nome();
+    automato_function.nome_automato = obter_nome_automato();
     automato_function.set_energia(obter_energia());
     distribuir_pontos_player(automato_function);
 }
 
 void montar_automato_ia(automato &automato_function, int energia) {
-    automato_function.nome = banco_de_nomes_ia();
+    automato_function.nome_automato = banco_de_nomes_ia();
+    automato_function.nome_humano = banco_de_nomes_pessoas_ia();
     automato_function.set_energia(energia);
     distribuir_pontos_ia(automato_function);
 }
@@ -20,6 +22,14 @@ void montar_automato_ia(automato &automato_function, int energia) {
 std::string obter_nome() {
     std::string nome;
     std::cout << "Digite nome: ";
+    std::getline(std::cin, nome);
+    return nome;
+}
+
+
+std::string obter_nome_automato() {
+    std::string nome;
+    std::cout << "Digite nome do seu automato: ";
     std::getline(std::cin, nome);
     return nome;
 }
@@ -135,4 +145,17 @@ std::string banco_de_nomes_ia() {
 
     int nome_aleatorio = gerar_num_aleatorio(0, 20);
     return nomes[nome_aleatorio];
+}
+
+std::string banco_de_nomes_pessoas_ia() {
+    std::string nomes_pessoas[] = {
+    "Aiden", "Ethan", "Liam", "Noah", "Mason",
+    "Haruki", "Kenji", "Ryu", "Takeshi", "Shin",
+    "Yuki", "Kaito", "Ren", "Sora", "Jin",
+    "Luca", "Marco", "Dante", "Leon", "Viktor",
+    "Kai", "Zane", "Cole", "Blake", "Reid"
+    };
+
+    int nome_aleatorio = gerar_num_aleatorio(0, 24);
+    return nomes_pessoas[nome_aleatorio];
 }

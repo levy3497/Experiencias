@@ -1,4 +1,5 @@
 #include "automato.hpp"
+#include <stdlib.h>
 #include <iostream>
 #include <random>
 
@@ -6,7 +7,8 @@
 
 void automato::imprimir() {
     std::cout << "#############################################\n";
-    std::cout << "Seu nome e: " << nome << std::endl;
+    std::cout << "Seu nome e: " << nome_humano << std::endl;
+    std::cout << "Nome do seu automato e: " << nome_automato << std::endl;
     std::cout << "Total energia de: " << energia << std::endl;
     std::cout << "Total de ataque de: " << ataque << std::endl;
     std::cout << "Total de defesa de: " << defesa << std::endl;
@@ -18,8 +20,16 @@ void impressoes_iniciais() {
     std::cout << "----------------\n";
     std::cout << "AUTOMATO REMAKE\n";
     std::cout << "----------------\n";
+    std::cout << "Pressione Enter para continuar:\n";
+    std::cin.get();
+    system("clear||cls");
 }
 
+void impressoes_historia(){
+
+}
+
+//funcao feita inteiramente por IA
 int gerar_num_aleatorio(int min, int max) {
     int num_aleatorio;
     std::random_device rd;

@@ -11,7 +11,7 @@ using namespace std;
 int main() {
     ma_engine engine;
     ma_engine_init(NULL, &engine);
-    ma_engine_play_sound(&engine, "audio_fundo.mp3", NULL);
+    ma_engine_play_sound(&engine, "background.mp3", NULL);
 
     automato automato_main_player;
     automato automato_main_ia;
